@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Task</title>
+</head>
+<style>
+  *{
+    font-size: 14px;
+  }
+  section{
+    width: 100vw;
+    height: 100px;
+    margin-bottom: 5px;
+  }
+  .sect1{
+    height: 50px;
+    background-color: rgba(138, 43, 226, 0.81);
+  }
+  h1{
+    font-family: Arial;
+
+    margin-left: 50%;
+    text-transform: uppercase;
+    margin-right: auto;
+     }
+  section:last-child{
+    background-color: #b571f1;
+
+  }
+
+  input{
+    width: 200px;
+    height: 20px;
+  }
+  button{
+    margin-top: 10px;
+    width: 100px;
+    border-radius:17px ;
+  }
+</style>
+
+
+<body>
+<section class="sect1">
+  <h1>Create Task</h1>
+</section>
+<section>
+<form th:action="@{/}" method="post">
+  <table>
+    <tr>
+      <th>Title:</th>
+      <td><input type="text" th:field="*{task.title}" /></td>
+    </tr>
+    <tr>
+      <th>Description:</th>
+      <td><input type="text" th:field="*{task.description}" /></td>
+    </tr>
+  </table>
+  <button type="submit">Create</button>
+</form>
+
+<a href="/">Back to List</a>
+</section>
+</body>
+</html>
